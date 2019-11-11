@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+    <style type="text/css">
+        #web_bg{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width:100%;
+            height:100%;
+            min-width: 1000px;
+            z-index:-10;
+            zoom: 1;
+            background-image: url("BJ2.png");
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+        #logo{
+            position: fixed;
+            margin-top: -5px;
+            margin-left:200px;
+        }
+
+        #word_N{
+           position:fixed;
+            margin-top: 695px;
+            margin-left:500px;
+            color: white;
+        }
+        #id1
+        {
+            position: absolute;
+            border-color:#f2e4d5;
+            border-style: solid;
+            border-width: 5px;
+            background-color: #f2e4d5;
+            width:406px;
+            height:303px;
+            border-radius: 6px;
+            margin-top: 210px;
+            margin-left: 560px;
+            -moz-box-shadow:5px 5px 10px #717171;
+            -webkit-box-shadow:5px 5px 10px #717171;
+            box-shadow:5px 5px 10px #717171;
+        }
+
+        #i3
+        {   position: fixed;
+            background-color: #793c14;
+            border-color: #79573f;
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 5px;
+            width: 220px;
+            height: 43px;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 16px;
+            margin-top:130px;
+            margin-left: 70px;
+        }
+        #i3:hover{
+            opacity: 0.75;
+        }
+        #i1{
+            position: fixed;
+            margin-top:0x;
+            margin-left: 70px;
+            width: 220px;
+            height:35px;
+            border-radius: 3px;
+        }
+        #i2{
+            position: fixed;
+            margin-top:60px;
+            margin-left: 70px;
+            width: 220px;
+            height:35px;
+            border-radius: 3px;
+        }
+        .word{
+            position: fixed;
+            font-size: 16px;
+        }
+        #p1{
+            margin-top:6px;
+        }
+        #p2{
+            margin-left: 6px;
+            margin-top:69px;
+        }
+        #i4{
+            position: fixed;
+            margin-left: 610px;
+            margin-top:320px;
+        }
+
+        #a1{
+            position: fixed;
+            font-size: 17px;
+            font-family: 微软雅黑;
+        }
+        #a1:hover
+        {
+            color: #79573f;
+        }
+        #a2{
+            position: fixed;
+            font-size: 17px;
+            color: #000000;
+            text-decoration: none;
+            font-family: 微软雅黑;
+            margin-left: 125px;
+        }
+        #a2:hover
+        {
+            color: #79573f;
+        }
+        #i6{
+            position: fixed;
+            width: 13px;
+            height: 5px;
+            margin-top: 30px;
+            margin-left: 9px;
+        }
+        #i7 {
+            position: fixed;
+            margin-top: 240px;
+            margin-left: 695px;
+        }
+
+        #a3{
+            position: fixed;
+            margin-top:220px;
+            margin-left: 950px;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--背景-->
+    <div id="web_bg" "></div>
+<!--LOGO-->
+    <div id="logo">
+        <img src="LOGO.png" width="40px" height="40px"></div>
+<!--乱写的 要改-->
+    <div id="word_N">
+       <p>Copyright © 一键生成 www.xxx.com 版权所有 | 冀ICP备11015134号-3</p>
+    </div>
+<!--登入框-->
+    <div id="id1">
+<!-- 登录的条条框框  -->
+    </div>
+    <div id="i4">
+        <p class="word" id="p1">用户名：</p>
+
+        <input id="i1" type="text" placeholder="请输入用户名">
+
+        <p class="word" id="p2">密码：</p>
+
+        <input id="i2" type="password" placeholder="请输入密码">
+
+        <input id="i3" type="button"  value="立即登录" onclick="tl()"> <!--onclick用来和js联系-->
+    </div>
+
+<!--登入元素-->
+    <div id="i7">
+        <a id="a1"><b>登入</b></a>
+        <a id="a2" href="3.html"><b>注册</b></a>
+        <img id="i6" src="杠杠.png">
+    </div>
+<!--关闭按钮-->
+    <a id="a3" href=" " target="_blank">
+        <input  type="image" width="12px" src="no.png">
+    </a>
+
+<script>
+    var username=document.getElementById("i1");
+    var password=document.getElementById("i2");
+    document.getElementById("i3").onclick=function(){
+        var data=JSON.stringify({
+	    "username":username.value,
+	    "password":password.value
+	});
+	
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",function () {
+            if (this.readyState === this.DONE) {
+	        console.log(this.responseText);
+	        var JsonObj = JSON.parse(this.reponseText);
+	        if(JsonObj.status == 0){ // login success;
+	            document.cookie =JsonObj.data.token;
+	            valid();
+	        }
+            }
+        });
+        xhr.open("POST",URL);//
+        xhr.setRequestHeader("****","****");//设置制定的请求头
+        xhr.send(data);//发送请求
+    }
+
+    function valid(){
+	var data = null;
+	var xhr = new XMLHttpRequest();
+	xhr.addEventListener("readystatechange",function(){
+	    if(this.readyState === this.DONE){
+		console.log(this.responseText);
+		var JsonObject=JSON.parse(this.responseText);
+		if(JsonObject.status==0)window.location.href='4.html';//状态为0认证成功跳到主页面
+		if(JsonObject.status==1003)alert("密码错误");//密码错误
+		if(JsonObject.status==1004)alert("登录过期");//token过期
+	    }
+	});
+	xhr.open("GET",URL);//
+	var token=document.cookie;//token格式
+	xhr.setRequestHeader("****",token);//设置制定的请求头
+	xhr.send(data);
+    }
+
+</script>
+
+
+
+</body>
+</html>
+

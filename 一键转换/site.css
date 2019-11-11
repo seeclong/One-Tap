@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+#content{padding:0px 0px 20px 5px;background-color:#FFFFFF;width: 1090px;font-size:14px;}
+
+#nav {border: 0 solid #E70000;background-color: #F8F8F8; width:auto;text-align:left; padding-left:5px;}
+#nav span
+{
+    display:block;height:20px;
+    padding: 5px 0 5px 5px;
+    color: #582c0e;
+    font-size: 13px;
+    font-weight: bold;
+}
+#section
+{
+    background-color: White;
+    padding: 10px;
+    text-align:center;
+}
+#add{ text-align:center; margin-bottom:20px;}
+#add label{ float:left;display:block;width:30%;text-align:right;vertical-align:middle;color:#000;line-height:2.8em;}
+
+#add label.long{ float:left;display:block;width:25%;text-align:right;vertical-align:middle;line-height:2em;font-size:.9em;color:#000;padding:.3em 0 0}
+#add label.short{ float:left;display:block;width:5%;text-align:right;vertical-align:middle;color:#000;}
+
+#add .text-box{ width:240px;}
+#add .longtext{ width:500px;}
+#add .longlongtext{ width:785px;}
+
+#add span{display: block; line-height:3em;width:70%;text-align:left; margin-left:30%;}
+#add span.long{display:block;width:75%;text-align:left;margin-left:25%;}
+#add span.longlong{display:block;width:95%;text-align:left;margin-left:5%;}
+
+#add textarea{ height:40px; width:168px;}
+#add textarea.long{ height:100px; width:500px;}
+#add textarea.smallheight{ height:30px; width:785px;}
+#add a { color:Blue; text-decoration:none;}
+#add a:hover {color:Blue;text-decoration: underline;cursor: pointer;}
+
+
+#addother{ text-align:center; margin-bottom:20px;}
+#addother label{ float:left;display:block;width:30%;text-align:right;vertical-align:middle;color:#000;line-height:2.8em;}
+
+#addother label.long{ float:left;display:block;width:25%;text-align:right;vertical-align:middle;line-height:2em;font-size:.9em;color:#000;padding:.3em 0 0}
+#addother label.short{ float:left;display:block;width:5%;text-align:right;vertical-align:middle;color:#000;}
+
+#addother .text-box{ width:240px;}
+#addother .longtext{ width:500px;}
+#addother .longlongtext{ width:785px;}
+
+#addother span{display: block; line-height:3em;width:70%;text-align:left; margin-left:30%;}
+#addother span.long{display:block;width:75%;text-align:left;margin-left:25%;}
+#addother span.longlong{display:block;width:95%;text-align:left;margin-left:5%;}
+
+#addother textarea{ height:40px; width:168px;}
+#addother textarea.long{ height:100px; width:500px;}
+#addother textarea.smallheight{ height:30px; width:785px;}
+
+
+#adsearch .longtext{ width:500px;}
+
+.button{width:100px; background-color:#f5cb9e;border:none; color:#FFFFFF; height:30px;}
+.buttonleft{width:100px; background-color:#f5cb9e;border:none; color:#FFFFFF; height:30px; float:left; margin-right:5px;}
+.buttonright{width:100px; background-color:#f5cb9e;border:none; color:#FFFFFF; height:30px; float:right; margin-right:5px;}
+.button:hover{cursor: pointer;}
+.buttonleft:hover{cursor: pointer;}
+.buttonright:hover{cursor: pointer;}
+
+#add span.field-validation-error{display:inline-block;color: #e80c4d;font-weight: bold;line-height:3em;width:250px;text-align:left; margin-left:-80px; height:1px;}
+#add span.field-validation-valid{display: none;}
+input.input-validation-error{ border: 1px solid #e80c4d;}
+input[type="checkbox"].input-validation-error{ border: 0 none;}
+#add span.validation-summary-errors{color: #e80c4d;font-weight: bold;font-size: 1.1em;}
+#add span.validation-summary-valid{display: none;}
